@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="LinkedList," />
 
 
 
@@ -39,19 +39,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="LeetCode LinkedList 系列有很多题的做法大同小异，总结有以下的小技巧：
+
+Dummy node
+Fast and slow pointer
+
+现在就从Difficulty率从低到高总结每道题的技巧
+
+Delete Node in a Linked List
+Remove Duplicates from Sorted List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/09/17/hello-world/index.html">
+<meta property="og:title" content="LeetCode Algorithm Review -- LinkedList Trick">
+<meta property="og:url" content="http://yoursite.com/2015/09/16/Leet-Code-LinkeList-trick/index.html">
 <meta property="og:site_name" content="RobinLuo's Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-09-18T03:15:45.000Z">
+<meta property="og:description" content="LeetCode LinkedList 系列有很多题的做法大同小异，总结有以下的小技巧：
+
+Dummy node
+Fast and slow pointer
+
+现在就从Difficulty率从低到高总结每道题的技巧
+
+Delete Node in a Linked List
+Remove Duplicates from Sorted List">
+<meta property="og:updated_time" content="2015-09-18T01:16:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="LeetCode Algorithm Review -- LinkedList Trick">
+<meta name="twitter:description" content="LeetCode LinkedList 系列有很多题的做法大同小异，总结有以下的小技巧：
+
+Dummy node
+Fast and slow pointer
+
+现在就从Difficulty率从低到高总结每道题的技巧
+
+Delete Node in a Linked List
+Remove Duplicates from Sorted List">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +82,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | RobinLuo's Blog </title>
+  <title> LeetCode Algorithm Review -- LinkedList Trick | RobinLuo's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -160,7 +181,7 @@ Quick">
           
           
             
-              Hello World
+              LeetCode Algorithm Review -- LinkedList Trick
             
           
         </h1>
@@ -169,11 +190,26 @@ Quick">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-17T20:15:45-07:00" content="2015-09-17">
-            2015-09-17
+          <time itemprop="dateCreated" datetime="2015-09-16T04:15:58-07:00" content="2015-09-16">
+            2015-09-16
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Algorithm-Interview/" itemprop="url" rel="index">
+                  <span itemprop="name">Algorithm, Interview</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -188,33 +224,38 @@ Quick">
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <span itemprop="articleBody"><p>LeetCode LinkedList 系列有很多题的做法大同小异，总结有以下的小技巧：</p>
+<ol>
+<li>Dummy node</li>
+<li>Fast and slow pointer</li>
+</ol>
+<p>现在就从Difficulty率从低到高总结每道题的技巧</p>
+<ol>
+<li>Delete Node in a Linked List</li>
+<li>Remove Duplicates from Sorted List</li>
+</ol>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LinkedList/" rel="tag">#LinkedList</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/17/algorithm/" rel="prev">algorithm</a>
+              <a href="/2015/09/17/hello-world/" rel="prev">Hello World</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/09/16/Leet-Code-LinkeList-trick/" rel="next">LeetCode Algorithm Review -- LinkedList Trick</a>
             
           </div>
         </div>
@@ -318,7 +359,7 @@ Quick">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
